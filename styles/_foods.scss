@@ -1,0 +1,44 @@
+#foods {
+    h1 {
+        text-align: center;
+        color: #D4130C;
+    }
+
+    .foods-card-container {
+        width: 90%;
+        margin: 3% auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .food-card {
+            width: 23%;
+            height: 315px;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: all 1s;
+
+            h3 {
+                margin: 3px;
+                text-align: center;
+            }
+
+            img {
+                display: block;
+                margin: auto;
+                width: 90%;
+            }
+
+            .container {
+                padding: 2px 16px;
+
+            }
+
+            &:hover {
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
