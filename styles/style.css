@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+html {
+  scroll-behavior: smooth; }
+
 body {
   padding: 0;
   margin: 0;
@@ -8,8 +11,87 @@ body {
 ::selection {
   background-color: aliceblue; }
 
+.navbar {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3; }
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff; }
+    .navbar ul li a {
+      display: block;
+      padding: 20px 20px;
+      border-right: 1px solid #f4f4f4;
+      text-decoration: none;
+      color: #334352; }
+  .navbar li a:hover,
+  .navbar .menu-btn:hover {
+    background-color: #f4f4f4; }
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    font-size: 1.3em;
+    padding: 2px 20px;
+    text-decoration: none;
+    color: #d4130c; }
+    .navbar .logo img {
+      display: inline;
+      width: 56px; }
+  .navbar .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out; }
+  .navbar .menu-icon {
+    cursor: pointer;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none; }
+  .navbar .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px; }
+  .navbar .menu-icon .navicon:before,
+  .navbar .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%; }
+  .navbar .menu-icon .navicon:before {
+    top: 5px; }
+  .navbar .menu-icon .navicon:after {
+    top: -5px; }
+  .navbar .menu-btn {
+    display: none; }
+  .navbar .menu-btn:checked ~ .menu {
+    max-height: 240px; }
+  .navbar .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent; }
+  .navbar .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg); }
+  .navbar .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg); }
+  .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0; }
+
 header {
-  margin-bottom: 5%; }
+  margin-bottom: -2%;
+  display: table;
+  padding-top: 7%; }
   header::before {
     content: '';
     position: absolute;
@@ -22,38 +104,13 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; }
-  header nav #brand {
-    min-width: 14rem;
-    width: 14rem;
-    float: left; }
-    header nav #brand img {
-      width: 80px;
-      margin: auto;
-      display: block; }
-  header nav ul {
-    width: calc(100% - 18rem);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 1.83% 10px;
-    margin: 0;
-    margin-left: 14rem; }
-    header nav ul li {
-      list-style: none; }
-      header nav ul li a {
-        text-decoration: none;
-        color: #FE0000;
-        font-size: 19px;
-        padding: 5px 20px; }
-        header nav ul li a:hover {
-          color: #54575f; }
-  header #home {
+  header #intro {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     padding: 20px;
     width: 35%;
     margin: 2% auto 1% auto; }
-    header #home h2 {
+    header #intro h2 {
       text-align: center; }
   header #search-area {
     width: 40%;
@@ -67,6 +124,21 @@ header {
       header #search-area input[type=search]:focus {
         outline: none; }
 
+/* 48em = 768px */
+@media (min-width: 48em) {
+  li {
+    float: left; }
+
+  li a {
+    padding: 20px 30px; }
+
+  .menu {
+    clear: none !important;
+    float: right;
+    max-height: none !important; }
+
+  .menu-icon {
+    display: none; } }
 button, input[type=submit] {
   font-family: 'Quicksand', sans-serif;
   background-color: #FE0000;
@@ -175,7 +247,7 @@ input[type=submit] {
     #contact #contact-form input[type=tel],
     #contact #contact-form textarea {
       width: 100%;
-      padding: 12px 20px;
+      padding: 12px;
       margin: 8px 0;
       display: inline-block;
       border: 1px solid #ccc;
@@ -203,5 +275,39 @@ footer {
     padding: 10px 0;
     color: #D4130C;
     margin: 0; }
+
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden; }
+
+  header {
+    padding-top: 20%;
+    padding-left: 1.1%; }
+    header #intro {
+      width: 80%; }
+    header button, header input[type=submit] {
+      margin-top: 3%; }
+    header #search-area {
+      width: 90%;
+      margin: 2% auto auto; }
+      header #search-area input[type=search] {
+        width: 70%; }
+      header #search-area input[type=submit] {
+        width: 30%; }
+
+  header::before {
+    padding: 2px; }
+
+  #services {
+    margin: 14% auto 5%; }
+    #services #service-card-container {
+      padding-left: 1.1%;
+      flex-wrap: wrap; }
+      #services #service-card-container .service-card {
+        width: 100%;
+        margin-bottom: 5%; }
+
+  #foods .foods-card-container .food-card {
+    width: 80%; } }
 
 /*# sourceMappingURL=style.css.map */

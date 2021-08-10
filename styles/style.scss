@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -49,3 +53,4 @@ input[type=submit] {
 @import 'foods';
 @import 'contact';
 @import 'footer';
+@import 'media';

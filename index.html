@@ -11,19 +11,22 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div id="brand">
-                <img src="images/logo.png" alt="logo">
-            </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#foods">Foods</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="home">
+    <nav class='navbar'>
+        <a href="/" class="logo">
+            <img src="images/logo.png" alt="logo">
+            <span>Chili <span style="color: #334352;">Food</span> Company</span>
+        </a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#foods">Foods</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header id="home">
+        <div id="intro">
             <h2>Chili Food Company</h2>
             <p>Chili Food is an online food and grocery delivery platform brand. We have as many food categories as you
                 wish to eat. We list your menu online, help you process orders, pick them up, and deliver them to you.
