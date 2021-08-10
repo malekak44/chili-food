@@ -277,12 +277,12 @@ footer {
     margin: 0; }
 
 @media only screen and (max-width: 768px) {
+  html,
   body {
     overflow-x: hidden; }
 
   header {
-    padding-top: 20%;
-    padding-left: 1.1%; }
+    padding-top: 20%; }
     header #intro {
       width: 80%; }
     header button, header input[type=submit] {
@@ -295,19 +295,21 @@ footer {
       header #search-area input[type=submit] {
         width: 30%; }
 
-  header::before {
-    padding: 2px; }
-
   #services {
     margin: 14% auto 5%; }
     #services #service-card-container {
-      padding-left: 1.1%;
       flex-wrap: wrap; }
       #services #service-card-container .service-card {
         width: 100%;
         margin-bottom: 5%; }
 
   #foods .foods-card-container .food-card {
-    width: 80%; } }
+    width: 80%; }
+
+  #contact #contact-form form {
+    width: 95%; }
+
+  footer p {
+    font-size: 14px; } }
 
 /*# sourceMappingURL=style.css.map */

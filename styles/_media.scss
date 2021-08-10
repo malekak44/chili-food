@@ -1,11 +1,12 @@
 @media only screen and (max-width: 768px) {
+
+    html,
     body {
         overflow-x: hidden;
     }
 
     header {
         padding-top: 20%;
-        padding-left: 1.1%;
 
         #intro {
             width: 80%;
@@ -29,16 +30,10 @@
         }
     }
 
-    header::before {
-        padding: 2px;
-    }
-
-
     #services {
         margin: 14% auto 5%;
 
         #service-card-container {
-            padding-left: 1.1%;
             flex-wrap: wrap;
 
             .service-card {
@@ -51,5 +46,13 @@
 
     #foods .foods-card-container .food-card {
         width: 80%;
+    }
+
+    #contact #contact-form form {
+        width: 95%;
+    }
+
+    footer p {
+        font-size: 14px;
     }
 }
